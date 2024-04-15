@@ -23,6 +23,22 @@ const App = () => {
     settask(newstat)
   }
 
+  let isValid = false
+
+  const deleteHandler = (i) => {
+    
+    if(!task[i].completed){
+      isValid = confirm("Are you sure you want to delete?")
+    }
+
+     let copyTask = [...task]
+     if(task[i].completed || isValid){
+       copyTask.splice(i,1)
+       settask(copyTask)
+      //  task.filter((task,index) => (index !==i))
+     }
+  }
+
    if(task.length > 0){
       render = task.map((task, index) => (<div key={index} className='border border-white rounded-xl w-[28rem] p-4 h-1/6  gap-2 flex text-white font-bold justify-center items-center my-3 overflow-y-auto'>
        <div className='w-3/4 h-3/4 flex items-center text-2xl overflow-hidden'>
@@ -30,7 +46,7 @@ const App = () => {
          <h2 className={`${task.completed && 'line-through'} text-yellow-100 overflow-hidden`}>{task.title}</h2>
        </div>
        <div className='w-1/4 h-3/4 flex justify-center items-center gap-5'>
-         <i className="bg-orange-600 p-2 px-3 rounded-full font-light text-xl ri-pencil-line"></i><i className=" font-light bg-orange-600 p-2 px-3 rounded-full text-xl ri-delete-bin-line"></i>
+          <i className="bg-orange-600 p-2 px-3 rounded-full font-light text-xl ri-pencil-line"></i><i onClick={()=>deleteHandler(index)} className="font-light bg-orange-600 p-2 px-3 rounded-full text-xl ri-delete-bin-line"></i>
        </div>
      </div>))
    }
