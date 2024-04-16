@@ -12,8 +12,8 @@ const App = () => {
   return (
     <div className='w-screen h-screen flex justify-center items-center bg-zinc-900'>
       <div className='flex flex-col gap-4 justify-center items-center w-[40rem] h-full'>
-        <Header task={task}/>
-        <Create task={task} settask={settask}/>
+        <Header task={task} />
+        <Create task={task} settask={settask} />
         <Show task={task} settask={settask} />
       </div>
     </div>

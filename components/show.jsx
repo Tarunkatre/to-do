@@ -42,11 +42,11 @@ const show = (props) => {
         }
     }
 
-  return (
-      <div className='w-[30rem] h-1/2 overflow-y-auto'>
-          {render}
-      </div>
-  )
+    return (
+        <div className='w-[30rem] h-1/2 overflow-y-auto'>
+            {render}
+        </div>
+    )
 }
 
 export default show
