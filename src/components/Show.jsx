@@ -1,7 +1,10 @@
-const Show = (props) => {
+import { useContext } from "react"
+import { context } from "../Context/Context"
 
-  const task = props.task
-  const settask = props.settask
+const Show = () => {
+
+  const [task, settask] = useContext(context)
+
 
   const event = (i) => {
     const newstat = [...task]

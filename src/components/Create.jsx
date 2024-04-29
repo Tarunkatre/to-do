@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useContext,useState } from 'react'
+import { context } from '../Context/Context'
 
-const Create = (props) => {
-  const task = props.task
-  const settask = props.settask
+const Create = () => {
 
   const [title, settitle] = useState("")
+  const [task,settask] = useContext(context)
+
 
 
   const submitEvent = (e) => {

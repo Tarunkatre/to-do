@@ -1,6 +1,10 @@
-const Head = (props) => {
-    const task = props.task;
+import { useContext } from "react"
+import { context } from "../Context/Context"
 
+
+const Head = () => {
+
+    const [task] = useContext(context)
   return (
       <div className=' flex justify-center items-center w-[35rem] h-1/4'>
           <div className='w-1/2'>
