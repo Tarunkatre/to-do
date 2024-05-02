@@ -4,7 +4,7 @@ export const context = createContext(null)
 
 const Context = (props) => {
 
-  const [task, settask] = useState([{ title: "task1", completed: true }])
+  const [task, settask] = useState([])
 
   return (
     <context.Provider value={[task,settask]}>
